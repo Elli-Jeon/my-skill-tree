@@ -9,12 +9,12 @@ const Home: NextPage = () => {
 			<span>ver1.1</span>
 			<Image src={"/logo/github.svg"} alt="github" width="50px" height="50px" />
 			<Image src={"/logo/email.svg"} alt="email" width="50px" height="50px" />
-			<Image src={"/logo/kakao.svg"} alt="kakao" width="40px" height="100px" />
+			<Image src={"/logo/kakao.png"} alt="kakao" width="240px" height="40px" />
 			<Image
-				src={"/logo/google.svg"}
+				src={"/logo/google.png"}
 				alt="google"
-				width="40px"
-				height="100px"
+				width="240px"
+				height="40px"
 			/>
 		</div>
 	);
