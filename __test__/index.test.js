@@ -24,7 +24,7 @@ describe("Home", () => {
 	it("version", () => {
 		render(<Home />);
 
-		const version = screen.getByText("ver1.1");
+		const version = screen.getByText("ver1.0");
 
 		expect(version).toBeInTheDocument();
 	});
