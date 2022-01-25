@@ -1,9 +1,7 @@
 import styled from "styled-components";
+import { PageContainer } from "styles/styledcomponents";
 
-export const PageContainer = styled.main`
-	width: 100%;
-	height: 100%;
-	display: flex;
+export const HomePageContainer = styled(PageContainer)`
 	flex-direction: column;
 	align-items: center;
 	color: white;

@@ -8,7 +8,7 @@ import * as S from "./styles";
 
 const Home: NextPage = () => {
 	return (
-		<S.PageContainer>
+		<S.HomePageContainer>
 			<div className="top">
 				<S.HomeTitle>My Tech Tree</S.HomeTitle>
 			</div>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
 					<LoginButton platform="google" />
 				</div>
 			</div>
-		</S.PageContainer>
+		</S.HomePageContainer>
 	);
 };
 
