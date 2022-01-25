@@ -29,5 +29,13 @@ describe("Home", () => {
 		expect(version).toBeInTheDocument();
 	});
 
+	it("외부 링크 연결", () => {
+		render(<Home />);
 
+		const github = screen.getByRole("link", { name: "github" });
+		const email = screen.getByRole("link", { name: "email" });
+
+		expect(github).toHaveAttribute("href", "https://github.com/Elli-Jeon");
+		expect(email).toHaveAttribute("href", "mailto:raverena96@gmail.com");
+	});
 });

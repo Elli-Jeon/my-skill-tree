@@ -18,12 +18,12 @@ const Home: NextPage = () => {
 					<span>ver1.0</span>
 					<div className="contact">
 						<Link href="https://github.com/Elli-Jeon">
-							<a target="_blank">
+							<a target="_blank" aria-label="github">
 								<GithubIcon fill="white" width="4vh" />
 							</a>
 						</Link>
 						<Link href="mailto:raverena96@gmail.com">
-							<a>
+							<a aria-label="email">
 								<Email fill="white" width="4vh" />
 							</a>
 						</Link>
