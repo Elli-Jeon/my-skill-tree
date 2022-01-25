@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import GithubIcon from "public/logo/github.svg";
+import Email from "public/logo/email.svg";
 import * as S from "./styles";
 
 const Home: NextPage = () => {
@@ -13,18 +15,8 @@ const Home: NextPage = () => {
 					<span>Elli-Jeon</span>
 					<span>ver1.0</span>
 					<div className="contact">
-						<Image
-							src={"/logo/github.svg"}
-							alt="github"
-							width="36px"
-							height="36px"
-						/>
-						<Image
-							src={"/logo/email.svg"}
-							alt="email"
-							width="36px"
-							height="36px"
-						/>
+						<GithubIcon fill="white" width="4vh" />
+						<Email fill="white" width="4vh" />
 					</div>
 				</div>
 				<div className="login">

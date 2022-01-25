@@ -32,8 +32,6 @@ describe("Home", () => {
 	it("이미지", () => {
 		render(<Home />);
 
-		const github = screen.getByAltText("github");
-		const email = screen.getByAltText("email");
 		const kakao = screen.getByAltText("kakao");
 		const google = screen.getByAltText("google");
 

@@ -25,14 +25,14 @@ export const PageContainer = styled.main`
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			font-size: 24px;
+			font-size: 3vh;
 		}
 		// contact email, github
 		.contact {
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
-			margin-top: 2rem;
+			margin-top: 2vh;
 			width: 100%;
 		}
 		// login buttons
