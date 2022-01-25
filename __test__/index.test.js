@@ -29,14 +29,5 @@ describe("Home", () => {
 		expect(version).toBeInTheDocument();
 	});
 
-	it("이미지", () => {
-		render(<Home />);
 
-		const kakao = screen.getByAltText("kakao");
-		const google = screen.getByAltText("google");
-
-		[github, email, kakao, google].forEach((ele) => {
-			expect(ele).toBeInTheDocument();
-		});
-	});
 });

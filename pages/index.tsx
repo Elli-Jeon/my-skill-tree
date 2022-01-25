@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import GithubIcon from "public/logo/github.svg";
 import Email from "public/logo/email.svg";
+import LoginButton from "components/LoginButton";
 import * as S from "./styles";
 
 const Home: NextPage = () => {
@@ -20,18 +21,8 @@ const Home: NextPage = () => {
 					</div>
 				</div>
 				<div className="login">
-					<Image
-						src={"/logo/kakao.png"}
-						alt="kakao"
-						width="240px"
-						height="40px"
-					/>
-					<Image
-						src={"/logo/google.png"}
-						alt="google"
-						width="240px"
-						height="40px"
-					/>
+					<LoginButton platform="kakao" />
+					<LoginButton platform="google" />
 				</div>
 			</div>
 		</S.PageContainer>
