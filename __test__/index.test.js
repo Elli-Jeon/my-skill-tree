@@ -29,6 +29,14 @@ describe("Home", () => {
 		expect(version).toBeInTheDocument();
 	});
 
+	it("임시로 시작하기", () => {
+		render(<Home />);
+
+		const start = screen.getByText("시작하기");
+
+		expect(start).toHaveAttribute("href", "/techlist");
+	});
+
 	it("외부 링크 연결", () => {
 		render(<Home />);
 

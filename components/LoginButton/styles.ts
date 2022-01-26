@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
-export const ButtonContainer = styled.div<{ platform: "kakao" | "google" }>`
+export const ButtonContainer = styled.div<{
+	platform: "kakao" | "google" | "github";
+}>`
 	width: 270px;
 	height: 45px;
 	display: flex;
@@ -27,6 +29,15 @@ export const ButtonContainer = styled.div<{ platform: "kakao" | "google" }>`
 				color: #4f4f50;
 				&:hover {
 					background-color: #f5f5f5;
+				}
+			`;
+		}
+		if (platform === "github") {
+			return css`
+				background-color: #242323;
+				color: #ffffff;
+				&:hover {
+					background-color: #2e2d2c;
 				}
 			`;
 		}

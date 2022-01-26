@@ -19,19 +19,23 @@ const Home: NextPage = () => {
 					<div className="contact">
 						<Link href="https://github.com/Elli-Jeon">
 							<a target="_blank" aria-label="github">
-								<GithubIcon fill="white" width="4vh" />
+								<GithubIcon fill="white" width="4vh" height="4vh" />
 							</a>
 						</Link>
 						<Link href="mailto:raverena96@gmail.com">
 							<a aria-label="email">
-								<Email fill="white" width="4vh" />
+								<Email fill="white" width="4vh" height="4vh" />
 							</a>
 						</Link>
 					</div>
 				</div>
+				<Link href="/techlist" passHref>
+					<button>시작하기</button>
+				</Link>
 				<div className="login">
 					<LoginButton platform="kakao" />
 					<LoginButton platform="google" />
+					<LoginButton platform="github" />
 				</div>
 			</div>
 		</S.HomePageContainer>
