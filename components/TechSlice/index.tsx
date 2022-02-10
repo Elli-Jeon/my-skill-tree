@@ -4,9 +4,9 @@ import ArrowLink from "public/vectors/arrow-link.svg";
 import * as S from "./styles";
 
 export interface ITechSlice {
-	logo: string;
+	logo?: string;
 	tech: string;
-	description: string;
+	description?: string;
 }
 
 const TechSlice = () => {

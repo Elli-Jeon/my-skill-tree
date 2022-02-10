@@ -7,11 +7,15 @@ interface ITechSet {
 	techlist: ITechSlice[];
 }
 
-const TechSet = ({ title }: ITechSet) => {
+const TechSet = ({ title, techlist }: ITechSet) => {
 	return (
 		<S.SetContainer>
 			<S.SetTitle>{title}</S.SetTitle>
-			<S.SliceList></S.SliceList>
+			<S.SliceList>
+				{techlist.map((tech) => {
+					return <div>{tech.tech}</div>;
+				})}
+			</S.SliceList>
 		</S.SetContainer>
 	);
 };
