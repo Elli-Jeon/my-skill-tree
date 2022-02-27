@@ -18,4 +18,8 @@ https://app.sqldbm.com/MySQL/Edit/p202001/#
 4. react는 state reflection (상태의 반영)에 집중.
 5. 따라서 상태의 관리에 초점을 두어 테스트해보면 좋을듯.
 
+### BDD (Behaviour-driven)
+
+> TDD의 test를 생각하기 어려우면. 행동을 중심으로 생각해보자. 어떠한 상황 -> 어떠한 결과
+
 https://www.youtube.com/watch?v=L1dtkLeIz-M&t=823s
