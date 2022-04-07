@@ -2,13 +2,13 @@
 
 const path = require("path");
 
-const withPlugins = require("next-compose-plugins");
+const withPlugins = require("next-compose-plugins"); // plugin 여러개 쓰기 위함
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
 	enabled: process.env.ANALYZE === "true",
 });
 
-const withLess = require("next-with-less");
+const withLess = require("next-with-less"); // next에서 less 쓰게
 const pathToLessFileWithVariables = path.resolve(__dirname, "css/antd.less");
 
 module.exports = withPlugins([
