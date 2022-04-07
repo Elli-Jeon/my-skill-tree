@@ -10,6 +10,6 @@ export const Background = styled.div`
 	right: 0;
 	display: flex;
 	flex-direction: column;
-	background: url("/background/background.jpg") no-repeat center center;
+	//background: url("/background/background.jpg") no-repeat center center;
 	background-size: cover;
 `;
