@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-	height: 70px;
+	height: 5.6rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px 30px;
+	padding: 0 1.5rem;
 	color: #ffffff;
 `;
 
-export const ProfileImage = styled.div`
-	width: 35px;
-	height: 35px;
-	background-color: blue;
-	border-radius: 50%;
+export const Logo = styled.div`
+	display: flex;
+	align-items: center;
+	color: black;
+	font-size: 2.4rem;
 `;
