@@ -1,11 +1,14 @@
 import React from "react";
 import NodeMenu from "components/NodeMenu";
+import * as S from "./styles";
 
 const Main = () => {
 	return (
-		<div>
-			<NodeMenu></NodeMenu>
-		</div>
+		<S.Container>
+			<S.NodeMenuContainer>
+				<NodeMenu />
+			</S.NodeMenuContainer>
+		</S.Container>
 	);
 };
 

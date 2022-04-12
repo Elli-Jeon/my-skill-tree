@@ -1,8 +1,8 @@
 import React from "react";
 import Paper from "components/Paper";
-import AddIcon from "public/vectors/add.svg";
-import SearchIcon from "public/vectors/search.svg";
-import ListIcon from "public/vectors/list.svg";
+import AddIcon from "public/vectors/menu/add.svg";
+import SearchIcon from "public/vectors/menu/search.svg";
+import ListIcon from "public/vectors/menu/list.svg";
 import * as S from "./styles";
 
 const HeaderMenu = () => {
