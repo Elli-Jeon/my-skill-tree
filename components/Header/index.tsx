@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Menu from "components/Menu";
+import HeaderMenu from "components/HeaderMenu";
 import * as S from "./styles";
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
 				<Image src="/logo/logo.png" width="56px" height="56px" layout="fixed" />
 				<span>My Skill Tree</span>
 			</S.Logo>
-			<Menu />
+			<HeaderMenu />
 		</S.Container>
 	);
 };

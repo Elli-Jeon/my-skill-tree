@@ -15,8 +15,12 @@ export const Container = styled.div`
 		margin: 0.7rem 1.2rem;
 	}
 	.icon {
-		padding: 0.7rem 1.2rem;
+		margin: 0.7rem 1.2rem;
 		cursor: pointer;
+		transition: transform 200ms;
+		&:hover {
+			transform: translateY(1px);
+		}
 	}
 `;
 

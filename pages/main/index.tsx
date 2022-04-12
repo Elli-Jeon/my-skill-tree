@@ -1,7 +1,12 @@
 import React from "react";
+import NodeMenu from "components/NodeMenu";
 
 const Main = () => {
-	return <div>Main</div>;
+	return (
+		<div>
+			<NodeMenu></NodeMenu>
+		</div>
+	);
 };
 
 export default Main;

@@ -5,7 +5,7 @@ import SearchIcon from "public/vectors/search.svg";
 import ListIcon from "public/vectors/list.svg";
 import * as S from "./styles";
 
-const Menu = () => {
+const HeaderMenu = () => {
 	return (
 		<Paper>
 			<S.Container>
@@ -19,4 +19,4 @@ const Menu = () => {
 	);
 };
 
-export default Menu;
+export default HeaderMenu;
