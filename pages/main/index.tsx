@@ -5,9 +5,9 @@ import * as S from "./styles";
 const Main = () => {
 	return (
 		<S.Container>
-			<S.NodeMenuContainer>
+			<S.PositionContainer left={25} bottom={30}>
 				<NodeMenu />
-			</S.NodeMenuContainer>
+			</S.PositionContainer>
 		</S.Container>
 	);
 };

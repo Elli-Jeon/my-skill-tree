@@ -7,8 +7,15 @@ export const Container = styled.div`
 	display: flex;
 `;
 
-export const NodeMenuContainer = styled.div`
+interface PositionProps {
+	top?: number;
+	left?: number;
+	right?: number;
+	bottom?: number;
+}
+
+export const PositionContainer = styled.div<PositionProps>`
 	position: absolute;
-	left: 25px;
-	bottom: 30px;
+	left: ${({ left }) => left}px;
+	bottom: ${({ bottom }) => bottom}px;
 `;
