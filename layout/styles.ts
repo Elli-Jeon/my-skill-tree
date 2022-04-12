@@ -13,3 +13,8 @@ export const Background = styled.div`
 	//background: url("/background/background.jpg") no-repeat center center;
 	background-size: cover;
 `;
+
+export const Main = styled.main`
+	flex: 1; // Header제외 하고 꽉채우게
+	position: relative;
+`;

@@ -2,15 +2,15 @@ import React from "react";
 import Header from "components/Header";
 import * as S from "./styles";
 
-const BasicLayout = ({
-	children,
-}: {
-	children: JSX.Element | JSX.Element[];
-}) => {
+interface BasicLayoutProps {
+	children: React.ReactNode;
+}
+
+const BasicLayout = ({ children }: BasicLayoutProps) => {
 	return (
 		<S.Background>
 			<Header />
-			{children}
+			<S.Main>{children}</S.Main>
 		</S.Background>
 	);
 };
