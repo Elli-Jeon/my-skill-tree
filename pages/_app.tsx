@@ -3,6 +3,7 @@ import GlobalStyle from "styles/globalStyles";
 import theme from "styles/theme";
 import { ThemeProvider } from "styled-components";
 import BasicLayout from "layout";
+import "css/antd.less";
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
