@@ -14,7 +14,7 @@ export const Background = styled.div`
 	background-size: cover;
 `;
 
-export const Main = styled.main`
+export const Main = styled.div`
 	flex: 1; // Header제외 하고 꽉채우게
 	position: relative;
 `;
