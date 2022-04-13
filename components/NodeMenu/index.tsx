@@ -16,12 +16,12 @@ const NodeMenu = () => {
 	const handleShowMenu = useCallback(() => setShowMenu((prev) => !prev), []);
 
 	return (
-		<Paper width={630} height={90}>
+		<Paper width={showMenu ? 630 : 92} height={90}>
 			<S.Container>
 				<SVGIcon onClick={handleShowMenu}>
 					<CompassIcon />
 				</SVGIcon>
-				<S.NodeActions className={showMenu ? "show" : "hide"}>
+				<S.NodeActions showMenu={showMenu}>
 					<SVGIcon>
 						<AddNodeIcon />
 					</SVGIcon>
