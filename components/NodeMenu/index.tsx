@@ -1,6 +1,7 @@
 import React from "react";
 import Paper from "components/Paper";
 import Divider from "components/Divider";
+import SVGIcon from "components/SVGIcon";
 import AddImageIcon from "public/vectors/nodemenu/add-image.svg";
 import AddNodeIcon from "public/vectors/nodemenu/add-node.svg";
 import CompassIcon from "public/vectors/nodemenu/compass.svg";
@@ -13,13 +14,25 @@ const NodeMenu = () => {
 	return (
 		<Paper width={630} height={90}>
 			<S.Container>
-				<CompassIcon></CompassIcon>
-				<AddNodeIcon></AddNodeIcon>
+				<SVGIcon>
+					<CompassIcon />
+				</SVGIcon>
+				<SVGIcon>
+					<AddNodeIcon />
+				</SVGIcon>
 				<Divider />
-				<AddImageIcon></AddImageIcon>
-				<ConnectNodeIcon></ConnectNodeIcon>
-				<EditFontIcon></EditFontIcon>
-				<ShowNeighborsIcon></ShowNeighborsIcon>
+				<SVGIcon>
+					<AddImageIcon />
+				</SVGIcon>
+				<SVGIcon>
+					<ConnectNodeIcon />
+				</SVGIcon>
+				<SVGIcon>
+					<EditFontIcon />
+				</SVGIcon>
+				<SVGIcon>
+					<ShowNeighborsIcon />
+				</SVGIcon>
 			</S.Container>
 		</Paper>
 	);

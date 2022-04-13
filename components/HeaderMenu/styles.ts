@@ -7,19 +7,11 @@ export const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding: 0.2rem 1rem;
 	.image {
 		width: 3rem;
 		height: 3rem;
 		border-radius: 50%;
 		border: 1px solid black;
-		margin: 0.7rem 1.2rem;
-	}
-	.icon {
-		margin: 0.7rem 1.2rem;
-		cursor: pointer;
-		transition: transform 200ms;
-		&:hover {
-			transform: translateY(1px);
-		}
 	}
 `;
