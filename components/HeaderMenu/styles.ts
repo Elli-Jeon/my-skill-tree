@@ -23,9 +23,3 @@ export const Container = styled.div`
 		}
 	}
 `;
-
-export const Divider = styled.span`
-	width: 1px;
-	background-color: #c5c5c5;
-	height: 2.1rem;
-`;
