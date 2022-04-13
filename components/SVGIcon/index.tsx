@@ -1,8 +1,12 @@
 import React from "react";
 import * as S from "./styles";
 
-const SVGIcon: React.FC = ({ children }) => {
-	return <S.Container>{children}</S.Container>;
+interface SVGIconProps {
+	onClick?: React.MouseEventHandler;
+}
+
+const SVGIcon: React.FC<SVGIconProps> = ({ children, onClick }) => {
+	return <S.Container onClick={onClick}>{children}</S.Container>;
 };
 
 export default SVGIcon;

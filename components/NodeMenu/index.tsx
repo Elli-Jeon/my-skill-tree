@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Paper from "components/Paper";
 import Divider from "components/Divider";
 import SVGIcon from "components/SVGIcon";
@@ -11,28 +11,34 @@ import ShowNeighborsIcon from "public/vectors/nodemenu/show-neighbors.svg";
 import * as S from "./styles";
 
 const NodeMenu = () => {
+	const [showMenu, setShowMenu] = useState(true);
+
+	const handleShowMenu = useCallback(() => setShowMenu((prev) => !prev), []);
+
 	return (
 		<Paper width={630} height={90}>
 			<S.Container>
-				<SVGIcon>
+				<SVGIcon onClick={handleShowMenu}>
 					<CompassIcon />
 				</SVGIcon>
-				<SVGIcon>
-					<AddNodeIcon />
-				</SVGIcon>
-				<Divider />
-				<SVGIcon>
-					<AddImageIcon />
-				</SVGIcon>
-				<SVGIcon>
-					<ConnectNodeIcon />
-				</SVGIcon>
-				<SVGIcon>
-					<EditFontIcon />
-				</SVGIcon>
-				<SVGIcon>
-					<ShowNeighborsIcon />
-				</SVGIcon>
+				<S.NodeActions className={showMenu ? "show" : "hide"}>
+					<SVGIcon>
+						<AddNodeIcon />
+					</SVGIcon>
+					<Divider />
+					<SVGIcon>
+						<AddImageIcon />
+					</SVGIcon>
+					<SVGIcon>
+						<ConnectNodeIcon />
+					</SVGIcon>
+					<SVGIcon>
+						<EditFontIcon />
+					</SVGIcon>
+					<SVGIcon>
+						<ShowNeighborsIcon />
+					</SVGIcon>
+				</S.NodeActions>
 			</S.Container>
 		</Paper>
 	);
