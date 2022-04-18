@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
 import type { Canvas } from "fabric/fabric-impl";
+import React, { useEffect, useState, useRef } from "react";
+import useCanvasResize from "hooks/useCanvasResize";
 import { fabric } from "fabric";
 import NodeMenu from "components/NodeMenu";
 import * as S from "./styles";
 
 const Main = () => {
+	const canvasContainerRef = useRef<HTMLDivElement>(null);
 	const [canvas, setCanvas] = useState<null | Canvas>(null);
 
 	const initCanvas = () => {
@@ -19,6 +21,8 @@ const Main = () => {
 		setCanvas(initCanvas());
 	}, []);
 
+	useCanvasResize({ canvas, ref: canvasContainerRef });
+
 	const addRect = (canv: null | Canvas) => {
 		const rect = new fabric.Rect({
 			height: 200,
@@ -31,9 +35,8 @@ const Main = () => {
 	};
 
 	return (
-		<S.Container>
-			<button onClick={() => addRect(canvas)}>rect</button>
-			<canvas id="canvas"></canvas>
+		<S.Container ref={canvasContainerRef}>
+			<canvas id="canvas" />
 			<S.PositionContainer left={25} bottom={30}>
 				<NodeMenu />
 			</S.PositionContainer>
