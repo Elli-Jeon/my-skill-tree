@@ -6,6 +6,7 @@ interface IuseCanvasResizeProps {
 	ref: React.RefObject<HTMLDivElement>;
 }
 
+// 문제점. 너무 크게 조절했다가 다시 돌아오면 늘어난게 줄어들지는 않음.
 const useCanvasResize = ({ canvas, ref }: IuseCanvasResizeProps) => {
 	useEffect(() => {
 		const handleResize = () => {
@@ -21,7 +22,7 @@ const useCanvasResize = ({ canvas, ref }: IuseCanvasResizeProps) => {
 		handleResize(); // 맨처음 load때 값 반영
 
 		return () => window.removeEventListener("resize", handleResize);
-	}, []);
+	}, [canvas]);
 
 	return;
 };
