@@ -21,7 +21,7 @@ const Main = () => {
 		setCanvas(initCanvas());
 	}, []);
 
-	useCanvasResize({ canvas, ref: canvasContainerRef });
+	useCanvasResize(canvas);
 
 	const addRect = (canv: null | Canvas) => {
 		const rect = new fabric.Rect({
