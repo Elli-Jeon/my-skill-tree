@@ -1,13 +1,12 @@
 import type { Canvas } from "fabric/fabric-impl";
 import React, { useEffect, useState, useRef } from "react";
-import useCanvasResize from "hooks/useCanvasResize";
 import { fabric } from "fabric";
+import { debounce, last } from "lodash";
+import useCanvasResize from "hooks/useCanvasResize";
 import NodeMenu from "components/NodeMenu";
 import * as S from "./styles";
 
-interface ICanvasDrag {
-	isDragging: boolean;
-	selection: boolean;
+interface ILastPos {
 	lastPosX: number;
 	lastPosY: number;
 }
@@ -30,9 +29,8 @@ const Main = () => {
 
 	useCanvasResize(canvas);
 
-	const [canvasDrag, setCanvasDrag] = useState<ICanvasDrag>({
-		isDragging: false,
-		selection: true,
+	const [selection, setSelection] = useState(true);
+	const [lastPos, setLastPos] = useState<ILastPos>({
 		lastPosX: 0,
 		lastPosY: 0,
 	});
@@ -50,44 +48,59 @@ const Main = () => {
 				opt.e.preventDefault();
 				opt.e.stopPropagation();
 			});
+		}
+	}, [canvas]);
 
-			// DRAG the canvas
+	// DRAG the canvas
+
+	useEffect(() => {
+		if (canvas) {
 			canvas.on("mouse:down", (opt) => {
+				console.log("mouse down");
 				const e = opt.e;
 				if (e.altKey) {
-					setCanvasDrag(() => ({
-						isDragging: true,
-						selection: false,
+					setSelection(() => false);
+					setLastPos(() => ({
 						lastPosX: e.clientX,
 						lastPosY: e.clientY,
 					}));
 				}
 			});
+		}
+	}, [canvas]);
+
+	useEffect(() => {
+		if (canvas) {
 			canvas.on("mouse:move", (opt) => {
-				if (canvasDrag.isDragging) {
-					const e = opt.e;
-					let vpt = canvas.viewportTransform;
-					if (vpt) vpt[4] += e.clientX - canvasDrag.lastPosX;
-					if (vpt) vpt[5] += e.clientY - canvasDrag.lastPosY;
-					canvas.requestRenderAll();
-					setCanvasDrag((prev) => ({
-						...prev,
-						lastPosX: e.clientX,
-						lastPosY: e.clientY,
-					}));
+				const e = opt.e;
+				if (e.altKey) {
+					debounce(() => {
+						console.log("mouse move");
+						let vpt = canvas.viewportTransform;
+						if (vpt) vpt[4] += e.clientX - lastPos.lastPosX;
+						if (vpt) vpt[5] += e.clientY - lastPos.lastPosY;
+						canvas.requestRenderAll();
+						setLastPos(() => ({
+							lastPosX: e.clientX,
+							lastPosY: e.clientY,
+						}));
+					}, 500)();
 				}
 			});
+		}
+	}, [canvas]);
+
+	useEffect(() => {
+		if (canvas) {
 			canvas.on("mouse:up", (opt) => {
 				const vpt = canvas.viewportTransform;
 				if (vpt) canvas.setViewportTransform(vpt);
-				setCanvasDrag((prev) => ({
-					...prev,
-					isDragging: false,
-					selection: true,
-				}));
+				setSelection(() => true);
+
+				console.log("mouse up");
 			});
 		}
-	}, [canvas, canvasDrag]);
+	}, [canvas]);
 
 	const addRect = (canv: null | Canvas) => {
 		const rect = new fabric.Rect({
