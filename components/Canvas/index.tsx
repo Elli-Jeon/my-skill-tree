@@ -11,6 +11,7 @@ const Canvas = () => {
 		<Stage
 			width={window.innerWidth}
 			height={window.innerHeight - 56}
+			draggable
 			onWheel={handleMouseWheel}
 			scaleX={stageScale}
 			scaleY={stageScale}
