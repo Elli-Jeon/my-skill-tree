@@ -1,11 +1,22 @@
 import React from "react";
+import useCanvasZoom from "hooks/useCanvasZoom";
 import { Stage, Layer, Rect } from "react-konva";
 
 // 서버에는 window가 없기때문에 dynamic으로 import 해야 함.
 
 const Canvas = () => {
+	const { stageScale, stageX, stageY, handleMouseWheel } = useCanvasZoom();
+
 	return (
-		<Stage width={window.innerWidth} height={window.innerHeight - 56}>
+		<Stage
+			width={window.innerWidth}
+			height={window.innerHeight - 56}
+			onWheel={handleMouseWheel}
+			scaleX={stageScale}
+			scaleY={stageScale}
+			x={stageX}
+			y={stageY}
+		>
 			<Layer>
 				<Rect
 					x={20}
