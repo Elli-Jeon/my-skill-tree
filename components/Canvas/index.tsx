@@ -1,11 +1,18 @@
-import React from "react";
-import useCanvasZoom from "hooks/useCanvasZoom";
+import React, { useCallback, useState } from "react";
+import type { MouseEvent } from "react";
+import type { KonvaEventObject } from "konva/lib/Node";
 import { Stage, Layer, Rect } from "react-konva";
+import useCanvasZoom from "hooks/useCanvasZoom";
+import Node from "components/Node";
 
 // 서버에는 window가 없기때문에 dynamic으로 import 해야 함.
 
 const Canvas = () => {
 	const { stageScale, stageX, stageY, handleMouseWheel } = useCanvasZoom();
+
+	const handleMouseDown = (evt: KonvaEventObject<globalThis.MouseEvent>) => {
+		console.log(evt.target.getStage()?.getPointerPosition());
+	};
 
 	return (
 		<Stage
@@ -17,16 +24,10 @@ const Canvas = () => {
 			scaleY={stageScale}
 			x={stageX}
 			y={stageY}
+			onMouseDown={handleMouseDown}
 		>
 			<Layer>
-				<Rect
-					x={20}
-					y={50}
-					width={100}
-					height={100}
-					fill="red"
-					shadowBlur={10}
-				></Rect>
+				<Node></Node>
 			</Layer>
 		</Stage>
 	);

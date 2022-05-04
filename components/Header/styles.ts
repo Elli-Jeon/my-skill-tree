@@ -7,6 +7,7 @@ export const Container = styled.header`
 	justify-content: space-between;
 	padding: 0 1.5rem;
 	color: #ffffff;
+	border-bottom: 1px solid #ededed;
 `;
 
 export const Logo = styled.div`
